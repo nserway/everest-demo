@@ -6,37 +6,20 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 - Interoperability testing tools and test suites
 - Simulated EVs, EVSEs, etc. following interoperability best practices and simulating non happy-path charginig scenarios.
 
-# Dependencies
+# Install
 
 Install docker with the following link: [Get Docker](https://docs.docker.com/get-docker/)
    
 - Insure that the terminal has access to `docker` and `docker compose`
  
-## EV ↔ EVSE demos
+# STEP 1: Select the Demo 
 
-The demos in this repo showcase connectivity between one or two EVs and an EVSE.
-The protocol used by the EV can be selected using a UI dropdown. The dropdown can also be used to simulate errors on the EVCC.
-The use cases supported by the three demos are summarized in conceptual block diagrams below.
-
-| Demo | Content |
-| ---- |:-------:|
-| **One EV ↔ EVSE (AC Simulations)** | <img src="img/one_ev_one_evse.png" width="400" height="246"> |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** | <img src="img/one_ev_one_evse_iso15118-2_dc.png" width="400" height="246"> |
-| **Two EV ↔ EVSE** | <img src="img/two_ev_one_evse.png" width="400" height="246"> |
-
-#### Demo Notes
-EVerest is designed with embedded applications in mind. To illustrate this, we've imposed maximum CPU usage and RAM constraints of 100% (1 core) and 1024MB, respectively, in each of the demos. The sole exception is the automated testing demo, where resource constraints are less relevant to the demo's purpose. Even on modest desktop hardware, these constraints should only result in slightly longer boot times.
-
-You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
-
-```bash
-export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
-```
-
-in your terminal before one of the one-liners presented in the next section.
-
-
-### STEP 1: Run the demo
+Below is a table of demonstrations that are currently available. Copy and paste the command in the far right column for the demo you wish to execute. 
+| Demo | Content | Diagram | Command |
+| ---- | ---- | ---- | ---- |
+| **One EV ↔ EVSE (AC Simulations)** | | |  |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** | |
+| **Two EV ↔ EVSE** | 
 - Copy and paste the command for the demo you want to see:
     - 🚨 AC Charging ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-ac.sh | bash`
     - 🚨 ISO 15118 DC Charging ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
