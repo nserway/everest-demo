@@ -1,36 +1,16 @@
-# Quick EVerest Demos
+# Vision
 
-This repository is a repackaging of several simple demos of the EVerest tech stack. Our intent is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the industry. EVerest is currently in the _early adoption_ stage of the [LF Energy Technical Project Lifecycle](https://wiki.lfenergy.org/display/HOME/Technical+Project+Lifecycle).
+This repository includes several demos of the [EVerest](https://lfenergy.org/projects/everest/) tech stack capabilities which aim to examplify the modular nature of EVerest. The intent of the repository is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the industry. The demonstrations can be utilized to better understand the following: 
 
-## What is EVerest?
-[EVerest](https://lfenergy.org/projects/everest/) is a [Linux Foundation Energy](https://lfenergy.org/) project aiming to provide a modular, open-source framework and tech stack for all manner of electric vehicle chargers. This mission and architecture mean EVerest is well positioned to serve as the base for a reference implementation of a variety of standards that can drive interoperability in the eMobility space.
+- Standards-based implementations for driving interoperability between the EV, EVSE, and CSMS
+- Interoperability testing tools and test suites
+- Simulated EVs, EVSEs, etc. following interoperability best practices and simulating non happy-path charginig scenarios.
 
-### Vision
-The [US Joint Office of Energy and Transportation (US-JOET)](https://driveelectric.gov/) plans to use EVerest as a baseline from which to collaboratively build reliable interoperability solutions for EV charging, including:
-- reference implementations for standards driving interoperability between network actors including EVs, EVSEs, and CSMSs
-- interoperability testing tools and test suites
-- simulated EVs, EVSEs, etc. following interoperability best practices.
+# Dependencies
 
-The US-JOET has contributed this repository to the base everest project and continue modifying it to explore additional configurations.
-
-### EVerest currently supports the following standards
-- EN 61851
-- ISO 15118 (AC wired charging)
-    - SLAC / ISO 15118-3 in C++
-    - ISO 15118-2 AC
-- DC DIN SPEC 70121
-- OCPP 1.6J including profiles and security extensions
-- Partial OCPP 2.0.1 implementation
-    
-### Roadmap Items in Development
-- Full OCPP 2.0.1 / 2.1
-- ISO 15118-20
-- Robust error handling/reporting
-
-## SETUP: access docker
-
-- If you are a developer, you might already have docker installed on your laptop. If not, [Get Docker](https://docs.docker.com/get-docker/)
-    - Check that the terminal has access to `docker` and `docker compose`
+Install docker with the following link: [Get Docker](https://docs.docker.com/get-docker/)
+   
+- Insure that the terminal has access to `docker` and `docker compose`
  
 ## EV ↔ EVSE demos
 
