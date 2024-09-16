@@ -6,6 +6,12 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 - Interoperability testing tools and test suites
 - Simulated EVs, EVSEs, etc. following interoperability best practices and simulating non happy-path charginig scenarios.
 
+# Hardware Specific Insructions
+
+- Mac OS
+- Linux
+- Windows
+
 # Install
 
 Install docker with the following link: [Get Docker](https://docs.docker.com/get-docker/)
