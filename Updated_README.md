@@ -13,49 +13,46 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 - Linux
 - Windows
 
-# Install 
+# Install and Set-up
 
-Install docker with the following link [Get Docker](https://docs.docker.com/get-docker/)
+1. Install docker with the following link [Get Docker](https://docs.docker.com/get-docker/)
 
-- Note: When runing the demonstrations, use the Docker application terminal for the best results. However, demonstration commands can be posted directly into your machine's terminal if running on Windows or Linux 
+- Note: When runing the demonstrations, use the Docker desktop terminal for the best results. However, demonstration commands can be posted directly into your machine's terminal if running on Windows or Linux systems.
+
+2. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
+
+- Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
+
+3. Open the demo UI at http://127.0.0.1:1880/ui
+
+- Note: The demo UI will vary based on the demonstration that is selected
  
 # Step 1: Select the Demo
 
-Below is a table of demnstrations that are currently avaialble. Copy and paste the command from the "Command" column into the docker terminal
+Below is a table of demnstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
 
-- Note: Each demonstration has a brief description in the "Content" column, a high-level diagram in the "Diagram" column, and the demonstration command in the "Command" column.
+- Note: Each demonstration has a brief description in the "Content" column, a high-level diagram in the "Diagram" column, and a link to the the demonstration command in the "Command" column.
 
-| Demo | Content |
-| ---- |:-------:|
-| **One EV ↔ EVSE (AC Simulations)** | <img src="img/one_ev_one_evse.png" width="400" height="246"> |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** | <img src="img/one_ev_one_evse_iso15118-2_dc.png" width="400" height="246"> |
-| **Two EV ↔ EVSE** | <img src="img/two_ev_one_evse.png" width="400" height="246"> |
+| Demo | Content | Diagram | Command|
+| ---- | ---- | ---- | ---- |
+| **One EV ↔ EVSE (AC Simulation)** | | |  |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** |  | |  |
+| **Two EV ↔ EVSE** |  | | |
+| **E2E Automated Tests** | | | |
+| **OCPP Demos** | | |  |
 
-#### Demo Notes
-EVerest is designed with embedded applications in mind. To illustrate this, we've imposed maximum CPU usage and RAM constraints of 100% (1 core) and 1024MB, respectively, in each of the demos. The sole exception is the automated testing demo, where resource constraints are less relevant to the demo's purpose. Even on modest desktop hardware, these constraints should only result in slightly longer boot times.
+### Demo Commands 
 
-You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
+Copy and paste the command for the demo you want to explore:
 
-```bash
-export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
-```
-
-in your terminal before one of the one-liners presented in the next section.
-
-
-### STEP 1: Run the demo
-- Copy and paste the command for the demo you want to see:
-    - 🚨 AC Charging ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-ac.sh | bash`
-    - 🚨 ISO 15118 DC Charging ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
-    - 🚨 Two EVSE Charging ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-two-evse.sh | bash`
-    - 🚨 E2E Automated Tests ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-automated-testing.sh | bash`
-    - 🚨 Basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS (StEVe) ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -j`
-    - 🚨 Basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 1) ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -1` 
-    - 🚨 Basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 2) ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -2`
-    - 🚨 Basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 3) ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -3`
-    - 🚨 Basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (CitrineOS Security Profile 1) ⚡: `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -c -1`
-
-> NOTE: the `Basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS (StEVe)` demo is known to fail intermittently, and will not be fixed.
+   - **One EV ↔ EVSE (AC Simulation):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-ac.sh | bash`
+   - **One EV ↔ EVSE (ISO 15118 DC):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
+   - **Two EV ↔ EVSE:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-two-evse.sh | bash`    - **E2E Automated Tests:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-automated-testing.sh | bash`
+   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS (StEVe):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -j`
+   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -1` 
+   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 2):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -2`
+   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 3):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -3`
+   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (CitrineOS Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -c -1`
 
 ### STEP 2: Interact with the demo
 - Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
@@ -76,7 +73,16 @@ in your terminal before one of the one-liners presented in the next section.
  | OCPP 201 with successful connection |
  |-------|
  | ![OCPP 201 connection](img/ocpp201-connection.png) |
- 
+
+
+ You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
+
+```bash
+export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
+```
+
+in your terminal before one of the one-liners presented in the next section.
+
 
 ### STEP 3: See the list of modules loaded and the high level message exchange
 ![Simple AC charging station log screenshot](img/simple_ac_charging_station.png)
