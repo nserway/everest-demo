@@ -7,7 +7,7 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 - Simulated EVs, EVSEs, etc. following interoperability best practices and simulating stress testing scenarios 
 
 
-# Hardware Specific Instructions 
+# Opperating System Specific Instructions 
 
 - Mac OS
 - Linux
