@@ -31,15 +31,15 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 
 Below is a table of demnstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
 
-- Note: Each demonstration has a brief description in the "Content" column, a high-level diagram in the "Diagram" column, and a link to the the demonstration command in the "Command" column.
+- Note: Each demonstration has a brief description in the "Content" column and high-level diagram in the "Diagram" column. 
 
-| Demo | Content | Diagram | Command|
-| ---- | ---- | ---- | ---- |
-| **One EV ↔ EVSE (AC Simulation)** | | |  |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** |  | |  |
-| **Two EV ↔ EVSE** |  | | |
-| **E2E Automated Tests** | | | |
-| **OCPP Demos** | | |  |
+| Demo | Content | Diagram |
+| ---- | ---- | ---- |
+| **One EV ↔ EVSE (AC Simulation)** | | |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** |  | |
+| **Two EV ↔ EVSE** |  | |
+| **E2E Automated Tests** | | |
+| **OCPP Demos** | | |
 
 ### Demo Commands 
 
