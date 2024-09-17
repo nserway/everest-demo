@@ -1,4 +1,4 @@
-### Vision 
+# Vision 
 
 This repository includes several demos of the [EVerest](https://lfenergy.org/projects/everest/) tech stack capabilities which aim to exemplify the modular nature of EVerest. The intent of this repository is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the EV charging industry. The demonstrations can be utilized to understand the following: 
 
@@ -7,36 +7,23 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 - Simulated EVs, EVSEs, etc. following interoperability best practices and simulating stress testing scenarios 
 
 
-### Hardware Specific Instructions 
+# Hardware Specific Instructions 
 
 - Mac OS
 - Linux
 - Windows
 
-### EVerest currently supports the following standards
-- EN 61851
-- ISO 15118 (AC wired charging)
-    - SLAC / ISO 15118-3 in C++
-    - ISO 15118-2 AC
-- DC DIN SPEC 70121
-- OCPP 1.6J including profiles and security extensions
-- Partial OCPP 2.0.1 implementation
-    
-### Roadmap Items in Development
-- Full OCPP 2.0.1 / 2.1
-- ISO 15118-20
-- Robust error handling/reporting
+# Install 
 
-## SETUP: access docker
+Install docker with the following link [Get Docker](https://docs.docker.com/get-docker/)
 
-- If you are a developer, you might already have docker installed on your laptop. If not, [Get Docker](https://docs.docker.com/get-docker/)
-    - Check that the terminal has access to `docker` and `docker compose`
+- Note: When runing the demonstrations, use the Docker application terminal for the best results. However, demonstration commands can be posted directly into your machine's terminal if running on Windows or Linux 
  
-## EV ↔ EVSE demos
+# Step 1: Select the Demo
 
-The demos in this repo showcase connectivity between one or two EVs and an EVSE.
-The protocol used by the EV can be selected using a UI dropdown. The dropdown can also be used to simulate errors on the EVCC.
-The use cases supported by the three demos are summarized in conceptual block diagrams below.
+Below is a table of demnstrations that are currently avaialble. Copy and paste the command from the "Command" column into the docker terminal
+
+- Note: Each demonstration has a brief description in the "Content" column, a high-level diagram in the "Diagram" column, and the demonstration command in the "Command" column.
 
 | Demo | Content |
 | ---- |:-------:|
