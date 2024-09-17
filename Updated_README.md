@@ -19,14 +19,12 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 
 - Note: When runing the demonstrations, use the Docker desktop terminal for the best results. However, demonstration commands can be posted directly into your machine's terminal if running on Windows or Linux systems.
 
-2. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
+2. Ensure that docker is installed by opening your machines terminal and typing `docker --version`
 
-- Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
+- Note: The terminal should return "Docker version x.x.x".
 
-3. Open the demo UI at http://127.0.0.1:1880/ui
+3. Open the Docker desktop application and navigate to the terminal at the bottom of the screen. 
 
-- Note: The demo UI will vary based on the demonstration that is selected
- 
 # Step 1: Select the Demo
 
 Below is a table of demnstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
@@ -53,6 +51,17 @@ Copy and paste the command for the demo you want to explore:
    - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 2):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -2`
    - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 3):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -3`
    - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (CitrineOS Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -c -1`
+
+# Step 2: Open Demo Interface and Supporting Materials 
+
+1. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
+
+- Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
+
+2. Open the demo UI at http://127.0.0.1:1880/ui
+
+- Note: The demo UI will vary based on the demonstration that is selected
+ 
 
 ### STEP 2: Interact with the demo
 - Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
