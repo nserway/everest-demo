@@ -17,11 +17,11 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 
 1. Install docker with the following link [Get Docker](https://docs.docker.com/get-docker/)
 
-- Note: When runing the demonstrations, use the Docker desktop terminal for the best results. However, demonstration commands can be posted directly into your machine's terminal if running on Windows or Linux systems.
+   - Note: When runing the demonstrations, use the Docker desktop terminal for the best results. However, demonstration commands can be posted directly into your machine's terminal if running on Windows or Linux systems.
 
 2. Ensure that docker is installed by opening your machines terminal and typing `docker --version`
 
-- Note: The terminal should return "Docker version x.x.x".
+   - Note: The terminal should return "Docker version x.x.x".
 
 3. Open the Docker desktop application and navigate to the terminal at the bottom of the screen. 
 
@@ -29,7 +29,7 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 
 Below is a table of demnstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
 
-- Note: Each demonstration has a brief description in the "Content" column and high-level diagram in the "Diagram" column. 
+   - Note: Each demonstration has a brief description in the "Content" column and high-level diagram in the "Diagram" column. 
 
 | Demo | Content | Diagram |
 | ---- | ---- | ---- |
@@ -56,16 +56,14 @@ Copy and paste the command for the demo you want to explore:
 
 1. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
 
-- Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
+   - Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
 
 2. Open the demo UI at http://127.0.0.1:1880/ui
 
-- Note: The demo UI will vary based on the demonstration that is selected
+   - Note: The demo UI will vary based on the demonstration that is selected
  
+# Step 3: Interact with the demo
 
-### STEP 2: Interact with the demo
-- Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
-- Open the demo UI at http://127.0.0.1:1880/ui
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS demo, you can open the SteVe wep portal at http://localhost:8180/steve/manager/home. Login with username: admin, password: 1234
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 201 CSMS demo, the script currently checks out the maeve repository and builds it, so it is fairly slow.
   - It starts the Maeve containers in detached mode, so you would need to use docker desktop or `docker logs` to see the logs
