@@ -27,7 +27,7 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 
 # Step 1: Select the Demo
 
-Below is a table of demnstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
+Below is a table of demonstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
 
    - Note: Each demonstration has a brief description in the "Content" column and high-level diagram in the "Diagram" column. 
 
