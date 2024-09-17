@@ -1,17 +1,17 @@
-# Quick EVerest Demos
+### Vision 
 
-This repository is a repackaging of several simple demos of the EVerest tech stack. Our intent is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the industry. EVerest is currently in the _early adoption_ stage of the [LF Energy Technical Project Lifecycle](https://wiki.lfenergy.org/display/HOME/Technical+Project+Lifecycle).
+This repository includes several demos of the [EVerest](https://lfenergy.org/projects/everest/) tech stack capabilities which aim to exemplify the modular nature of EVerest. The intent of this repository is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the EV charging industry. The demonstrations can be utilized to understand the following: 
 
-## What is EVerest?
-[EVerest](https://lfenergy.org/projects/everest/) is a [Linux Foundation Energy](https://lfenergy.org/) project aiming to provide a modular, open-source framework and tech stack for all manner of electric vehicle chargers. This mission and architecture mean EVerest is well positioned to serve as the base for a reference implementation of a variety of standards that can drive interoperability in the eMobility space.
+- Standards-based implementations for driving interoperability between the EV, EVSE, and CSMS
+- Interoperability testing tools and test suites
+- Simulated EVs, EVSEs, etc. following interoperability best practices and simulating stress testing scenarios 
 
-### Vision
-The [US Joint Office of Energy and Transportation (US-JOET)](https://driveelectric.gov/) plans to use EVerest as a baseline from which to collaboratively build reliable interoperability solutions for EV charging, including:
-- reference implementations for standards driving interoperability between network actors including EVs, EVSEs, and CSMSs
-- interoperability testing tools and test suites
-- simulated EVs, EVSEs, etc. following interoperability best practices.
 
-The US-JOET has contributed this repository to the base everest project and continue modifying it to explore additional configurations.
+### Hardware Specific Instructions 
+
+- Mac OS
+- Linux
+- Windows
 
 ### EVerest currently supports the following standards
 - EN 61851
