@@ -45,24 +45,37 @@ Copy and paste the command for the demo you want to explore:
 
    - **One EV ↔ EVSE (AC Simulation):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-ac.sh | bash`
    - **One EV ↔ EVSE (ISO 15118 DC):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
-   - **Two EV ↔ EVSE:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-two-evse.sh | bash`    - **E2E Automated Tests:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-automated-testing.sh | bash`
-   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS (StEVe):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -j`
-   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -1` 
-   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 2):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -2`
-   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 3):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -3`
-   - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (CitrineOS Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -c -1`
+   - **Two EV ↔ EVSE:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-two-evse.sh | bash`
+   - **E2E Automated Tests:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-automated-testing.sh | bash`
+   - OCPP Demos:
+      - **OCPP basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS (StEVe):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -j`
+      - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -1` 
+      - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 2):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -2`
+      - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (MaEVe Security Profile 3):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -3`
+      - **OCPP basic and ISO 15118-2 AC Charging with OCPP 2.0.1 CSMS (CitrineOS Security Profile 1):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-ac-plus-ocpp.sh | bash -s -- -c -1`
 
 # Step 2: Open Demo Interface and Supporting Materials 
 
-1. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
+1. Open the demo UI at http://127.0.0.1:1880/ui
+
+   - Note: The demo UI will vary based on the demonstration that is selected. For the best results, having the demo UI and Docker desktop applciation up side-by-side will allow the user to understand what messages are being sent back-and-fourth across the demo actors. 
+     
+2. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
 
    - Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
-
-2. Open the demo UI at http://127.0.0.1:1880/ui
-
-   - Note: The demo UI will vary based on the demonstration that is selected
  
-# Step 3: Interact with the demo
+# Step 3: Interact with the Demo
+
+Below are instructions to interact with the different demonstrations. Feel free to explore these demos on your own accord, these instructions are meant to be a loose guide. 
+
+# Step 4: Teardown
+
+- Kill the demo process
+- Delete files and containers: `docker compose -p [prefix] down && rm docker-compose.yml` where `[prefix]` is `everest, everest-dc, everest-two-evse...`
+
+
+
+
 
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS demo, you can open the SteVe wep portal at http://localhost:8180/steve/manager/home. Login with username: admin, password: 1234
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 201 CSMS demo, the script currently checks out the maeve repository and builds it, so it is fairly slow.
@@ -91,14 +104,6 @@ in your terminal before one of the one-liners presented in the next section.
 - Run the demo: 💄 exploring configs 🔧: `curl -o docker-compose.yml https://raw.githubusercontent.com/everest/everest-demo/main/docker-compose.admin-panel.yml && docker compose -p everest-admin-panel up`
 - Access the visual representation at http://localhost:8849
 
-### TEARDOWN: Clean up after the demo
-- Kill the demo process
-- Delete files and containers: `docker compose -p [prefix] down && rm docker-compose.yml`
-where `[prefix]` is `everest, everest-dc, everest-two-evse...`
-
 ## High level block diagram overview of EVerest capabilities
 From https://everest.github.io/nightly/general/01_framework.html
 ![image](https://everest.github.io/nightly/_images/quick-start-high-level-1.png)
-
-## Notes for Demo Contributors
-Docker images defined in this repository are built during pull requests, on merges to `main`, and on pushes of semantic version tags. The labels for newly-built images are determined by the `TAG` environment variable specified in the root level `.env` file in this repository. The value of `TAG` is also used throughout the demo `docker-compose.*.yml`.
