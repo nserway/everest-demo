@@ -66,14 +66,6 @@ Copy and paste the command for the demo you want to explore:
  |-------|--------|------|
  | ![nodered flows](img/node-red-example.png) | ![demo UI](img/charging-ui.png) | ![including simulated error](img/including-simulated-error.png) |
 
- | SteVe web portal |
- |-------|
- | ![SteVe web portal](img/steve-web-portal.png) |
-
- | OCPP 201 with successful connection |
- |-------|
- | ![OCPP 201 connection](img/ocpp201-connection.png) |
-
 
  You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
 
