@@ -77,8 +77,8 @@ Below are instructions to interact with the different demonstrations. Feel free 
 
 | Step | Description | UI | Docker Application | 
 | :----: | ---- | ---- | -----| 
-| 1 | Ensure the `Ready to start charging` Message is displayed in the Docker Terminal | | |
-| 2 | Within the demo UI, select `CAR PLUGIN` phases of the charging session are displayed above the charging guage | | |
+| 1 | Ensure the `Ready to start charging` Message is displayed in the Docker Terminal | ![UI](img/One_EV_EVSE_UI.png) | ![Docker UI](img/One_EV_EVSE_Docker_Startup.png) |
+| 2 | Within the demo UI, select `CAR PLUGIN` phases of the charging session are displayed above the charging guage | ![UI Startup](img/One_EV_EVSE_UI_Startup.png) |![Docker Startup UI](img/One_EV_EVSE_Docker_Startup.png) |
 | 3 | Adjust the current using the sliding scale at the top of the UI | | |
 | 4 | Select `STOP & UNPLUG` to terminate the charging session | | |
 | Notes | Only one demonstration can be run at a time, in order to spin up a new demo, move to Step 4: Teardown before attempting to start new demo. Additionally, this demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI. | | | 
