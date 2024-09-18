@@ -88,7 +88,7 @@ Below are instructions to interact with the different demonstrations. Feel free 
 - Kill the demo process
 - Delete files and containers: `docker compose -p [prefix] down && rm docker-compose.yml` where `[prefix]` is `everest, everest-dc, everest-two-evse...`
 
-# Optional 
+# Additional Functionality  
 
 There are many different variables that the user can experiment with thorughout the demonstrations. See below:
 
