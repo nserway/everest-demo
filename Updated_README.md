@@ -80,45 +80,32 @@ Below are instructions to interact with the different demonstrations. Feel free 
 | 1 | Ensure the `Ready to start charging` Message is displayed in the Docker Terminal | ![UI](img/One_EV_EVSE_UI.png) | ![Docker UI](img/One_EV_EVSE_Docker_Startup.png) |
 | 2 | Within the demo UI, select `CAR PLUGIN` phases of the charging session are displayed above the charging guage | ![UI Startup](img/One_EV_EVSE_UI_Start.png) |![Docker Startup UI](img/One_EV_EVSE_Docker_StartCharge.png) |
 | 3 | Adjust the current using the sliding scale at the top of the UI | ![UI Current](img/One_EV_EVSE_UI_Current.png) | ![Docker Current](img/One_EV_EVSE_Docker_Current.png) |
-| 4 | Select `STOP & UNPLUG` to terminate the charging session | | |
-| Notes | Only one demonstration can be run at a time, in order to spin up a new demo, move to Step 4: Teardown before attempting to start new demo. Additionally, this demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI. | | | 
+| 4 | Select `STOP & UNPLUG` to terminate the charging session | ![UI Stop](img/One_EV_EVSE_UI_Stop.png) | ![Docker_Stop](img/One_EV_EVSE_Docker_Stop.png)|
+| Notes | Only one demonstration can be run at a time, in order to spin up a new demo, move to Step 4: Teardown before attempting to start new demo. Additionally, this demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI. | ![UI_Note](img/One_EV_EVSE_UI_Note.png) | ![Docker_Note](img/One_EV_EVSE_Docker_Note.png)| 
 
 # Step 4: Teardown
 
 - Kill the demo process
 - Delete files and containers: `docker compose -p [prefix] down && rm docker-compose.yml` where `[prefix]` is `everest, everest-dc, everest-two-evse...`
 
+# Optional 
 
-
-
+There are many different variables that the user can experiment with thorughout the demonstrations. See below:
 
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS demo, you can open the SteVe wep portal at http://localhost:8180/steve/manager/home. Login with username: admin, password: 1234
+  
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 201 CSMS demo, the script currently checks out the maeve repository and builds it, so it is fairly slow.
   - It starts the Maeve containers in detached mode, so you would need to use docker desktop or `docker logs` to see the logs
   - Note that the OCPP logs are available at `/tmp/everest_ocpp_logs/` on the EVerest manager and can be downloaded using the docker desktop or `docker cp`
 
-| Nodered flows | Demo UI | Including simulated error |
- |-------|--------|------|
- | ![nodered flows](img/node-red-example.png) | ![demo UI](img/charging-ui.png) | ![including simulated error](img/including-simulated-error.png) |
-
-
- You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
+- You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
 
 ```bash
 export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
 ```
 
-in your terminal before one of the one-liners presented in the next section.
-
-
-### STEP 3: See the list of modules loaded and the high level message exchange
-![Simple AC charging station log screenshot](img/simple_ac_charging_station.png)
-
-### OPTIONAL: Explore the configs visually
 - This demo can be run independently, and exports [the admin panel](https://everest.github.io/nightly/general/03_quick_start_guide.html#admin-panel-and-simulations) as explained [in this video](https://youtu.be/OJ6kjHRPkyY?t=904).It provides a visual representation of the configuration and the resulting configurations.
-- Run the demo: 💄 exploring configs 🔧: `curl -o docker-compose.yml https://raw.githubusercontent.com/everest/everest-demo/main/docker-compose.admin-panel.yml && docker compose -p everest-admin-panel up`
+  
+- Run the explore configs demo: `curl -o docker-compose.yml https://raw.githubusercontent.com/everest/everest-demo/main/docker-compose.admin-panel.yml && docker compose -p everest-admin-panel up`
+  
 - Access the visual representation at http://localhost:8849
-
-## High level block diagram overview of EVerest capabilities
-From https://everest.github.io/nightly/general/01_framework.html
-![image](https://everest.github.io/nightly/_images/quick-start-high-level-1.png)
