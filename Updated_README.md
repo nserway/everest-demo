@@ -10,8 +10,12 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 # Operating System Specific Instructions 
 
 - Mac OS
+   - EVerest Demos are curently not supported on M1 chips
 - Linux
+   - No additional steps needed
 - Windows
+   - Ensure that you are running Windows 10+
+   - Install [Windows Subsystem for Linux](https://usg02.safelinks.protection.office365.us/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fwindows%2Fwsl%2Finstall&data=05%7C02%7Cnathan.serway%40afs.com%7Cbb027205f7784cbdcff508dcd76a1fa9%7Ca01f407a85cb4a1698bbf28e6384bd28%7C0%7C0%7C638622099325443284%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=aV05w32C%2B6EHcwN9NJKRa8ZxoioXdPsrMhewE%2Bjvaps%3D&reserved=0) (recommended version 2.0)
 
 # Install and Set-up
 
