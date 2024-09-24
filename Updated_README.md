@@ -71,42 +71,21 @@ Copy and paste the command for the demo you want to explore:
  
 # Step 3: Interact with the Demo
 
-Below are instructions to interact with the different demonstrations. Feel free to explore these demos on your own accord, these instructions are meant to be a loose guide. To understand and explore the UI and Docker logs further visit the expanded documentation page [here](add link once PR is added). Below is an example of
+Feel free to explore these demos on your own accord, below is a link to detailed instructions to interact with the different demonstrations, these instructions are meant to be a loose guide. Below is a table that will help the user understand how to interact with the UI.
 
 Note: Only one demonstration can be run at a time, in order to spin up a new demo, move to Step 4: Teardown before attempting to start new demo.
 
-### One EV ↔ EVSE (AC Simulation) 
-
-1. Ensure the `Ready to start charging` Message is displayed in the Docker Terminal
-2. Within the demo UI, select `CAR PLUGIN` phases of the charging session are displayed above the charging guage.
-3. Adjust the current using the sliding scale at the top of the UI
-4. Select `STOP & UNPLUG` to terminate the charging session
-5. This demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI.
-
-### One EV ↔ EVSE (ISO 15118-2 DC)
-
-1. Before selecting any buttons on the UI, the ISO 15118 Messages will be cycling
-2. Within the demo UI, select `CAR PLUGIN` phases of the charging session are displayed above the charging guage and the ISO 15118 messages will be displayed on the log on the right hand side of the UI.
-3. Adjust the current using the sliding scale at the top of the UI
-4. Select `STOP & UNPLUG` to terminate the charging session
-5. This demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI.
 
 
-### Two EV ↔ EVSE
-
-1. Select `SWIP RFID` on the far left hand side of the UI.
-2. Select either Connector 1 and/or Connector 2 `CAR PLUGIN`.
-3. Observe how Connector 1 and Connector 2 are independent from one another in the UI and Docker Application.
-4. Select `STOP & UNPLUG` to terminate the charging session
-5. This demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI.
-
-### E2E Automated Tests
-
-Question: Is there a demo UI for this one or just Docker Application logs? Couldn't get it to pull up
-
-### OCPP Demos
-
-Question: Is the demo UI different from the Two EV to EVSE?
+|Features| Description |
+| ---- | ---- |
+|![Demo UI](img/One_EV_EVSE_UI.png)| |
+| `CAR PLUGIN` | Starts the charging cycle |
+| `STOP & UNPLUG` | Stops the charging cycle |
+| `EV PAUSE` | Pause the charging session |
+| `EV RESUME` | Resume the charging cycle |
+| `Car Simulation` dropdown | Changes the charging scenario (i.e., chaos testing) |
+| `Max Current` slider | Slide to adjust the current provided to the vehicle |
 
    
 # Step 4: Teardown
