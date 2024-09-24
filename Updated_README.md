@@ -100,8 +100,13 @@ Note: Only one demonstration can be run at a time, in order to spin up a new dem
 4. Select `STOP & UNPLUG` to terminate the charging session
 5. This demonstration can simulate failures and differnt charging phases by using the `Car Simulation` dropdown menu in the UI.
 
+### E2E Automated Tests
 
+Question: Is there a demo UI for this one or just Docker Application logs? Couldn't get it to pull up
 
+### OCPP Demos
+
+Question: Is the demo UI different from the Two EV to EVSE?
 
    
 # Step 4: Teardown
