@@ -137,5 +137,5 @@ sequenceDiagram
     EV->>EVSE: Unplug (State A)
     Note over EVSE, EV: Session Ends
  
-``` |
+``` 
   
