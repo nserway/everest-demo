@@ -38,28 +38,7 @@ Below is a table of demonstrations that are currently avaialble. Copy and paste 
 
 | Demo | Content | Diagram |
 | ---- | -- | ----- |
-| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) |  ```mermaid
-
-sequenceDiagram
-
-    participant EV as Electric Vehicle (EV)
-    participant EVSE as Electric Vehicle Supply Equipment (EVSE)
-    EV->>EVSE: Plug-in
-    EVSE-->>EV: Proximity Check (PP Signal)
-    EV->>EVSE: Detect Proximity
-    EVSE-->>EV: Control Pilot Signal
-    EV->>EVSE: Signal Response (State A to State B1)
-    EVSE-->>EV: Power Available?
-    EV-->>EVSE: Ready to Charge (State B2)
-    EVSE-->>EV: Start Charging (State B2 to State C2)
-    Note over EVSE, EV: Charging in progress
-    EV->>EVSE: Request Stop (State C2 to State B)
-    EVSE-->>EV: Power Cut Off
-    EVSE-->>EV: Control Pilot Signal (State B)
-    EV->>EVSE: Unplug (State A)
-    Note over EVSE, EV: Session Ends
- 
-``` |
+| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | |
 | **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | |
 | **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | |
 | **E2E Automated Tests** | Performs an automated test of a full charging session| |
@@ -137,5 +116,26 @@ export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
 - Access the visual representation at http://localhost:8849
 
 
+ ```mermaid
 
+sequenceDiagram
+
+    participant EV as Electric Vehicle (EV)
+    participant EVSE as Electric Vehicle Supply Equipment (EVSE)
+    EV->>EVSE: Plug-in
+    EVSE-->>EV: Proximity Check (PP Signal)
+    EV->>EVSE: Detect Proximity
+    EVSE-->>EV: Control Pilot Signal
+    EV->>EVSE: Signal Response (State A to State B1)
+    EVSE-->>EV: Power Available?
+    EV-->>EVSE: Ready to Charge (State B2)
+    EVSE-->>EV: Start Charging (State B2 to State C2)
+    Note over EVSE, EV: Charging in progress
+    EV->>EVSE: Request Stop (State C2 to State B)
+    EVSE-->>EV: Power Cut Off
+    EVSE-->>EV: Control Pilot Signal (State B)
+    EV->>EVSE: Unplug (State A)
+    Note over EVSE, EV: Session Ends
+ 
+``` |
   
