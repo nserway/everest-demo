@@ -37,11 +37,11 @@ Below is a table of demonstrations that are currently avaialble. Copy and paste 
    - Note: Each demonstration has a brief description in the "Content" column and high-level diagram in the "Diagram" column. 
 
 | Demo | Content | Diagram |
-| ---- | -- | ----- |
-| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | |
+| ---- | -- | :---: |
+| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | [One EV ↔ EVSE (AC Simulation) Diagram](#One-EV-EVSE-(AC-Simulation)) |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](One-EV-↔-EVSE (ISO 15118-2 DC))|
 | **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | |
-| **E2E Automated Tests** | Performs an automated test of a full charging session| |
+| **E2E Automated Tests** | Performs an automated test of a full charging session| N/A |
 | **OCPP Demos** | Various OCPP 1.6J and 2.0.1 compliant charging sessions with differing security profiles| |
 
 ### Demo Commands 
@@ -115,6 +115,11 @@ export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
   
 - Access the visual representation at http://localhost:8849
 
+# Appendix Diagrams
+
+The following diagrams provide a visual representation of the above demos.
+
+### One EV ↔ EVSE (AC Simulation)
 
  ```mermaid
 
@@ -138,4 +143,131 @@ sequenceDiagram
     Note over EVSE, EV: Session Ends
  
 ``` 
-  
+
+### One EV ↔ EVSE (ISO 15118-2 DC)
+
+```mermaid
+
+sequenceDiagram
+
+   participant EV as Electric Vehicle (EV)
+   participant EVSE as Electric Vehicle Supply Equipment (EVSE)
+   Note over EV,EVSE: Connection Establishment
+   EV ->> EVSE: Physical Connection (PLC)
+   EVSE ->> EV: SECC Discovery Response
+   Note over EV,EVSE: Session Setup
+   EV ->> EVSE: Session Setup Request
+   EVSE -->> EV: Session Setup Response
+   Note over EV,EVSE: Service Discovery
+   EV ->> EVSE: Service Discovery Request
+   EVSE -->> EV: Service Discovery Response
+   Note over EV,EVSE: Service Selection
+   EV ->> EVSE: Service Selection Request
+   EVSE -->> EV: Service Selection Response
+   Note over EV,EVSE: Authorization
+   EV ->> EVSE: Authorization Request (e.g., Plug & Charge, Contract-based)
+   EVSE -->> EV: Authorization Response
+   Note over EV,EVSE: Charging Parameters Setup
+   EV ->> EVSE: Charging Parameters Request
+   EVSE -->> EV: Charging Parameters Response
+   Note over EV,EVSE: Charging
+   EV ->> EVSE: Power Delivery Request (Start Charging)
+   EVSE -->> EV: Power Delivery Response
+   EVSE ->> EV: Power Flow
+   Note over EV,EVSE: Charging Status Updates
+   EV ->> EVSE: Charging Status Request
+   EVSE -->> EV: Charging Status Response
+   Note over EV,EVSE: Termination
+   EV ->> EVSE: Power Delivery Request (Stop Charging)
+   EVSE -->> EV: Power Delivery Response (End Charging)
+   Note over EV,EVSE: Session Termination
+   EV ->> EVSE: Session Stop Request
+   EVSE -->> EV: Session Stop Response
+
+```
+
+### Two EV ↔ EVSE
+
+```mermaid
+
+sequenceDiagram
+
+   participant EV1 as Electric Vehicle 1 (EV1)
+   participant EV2 as Electric Vehicle 2 (EV2)
+   participant EVSE as Electric Vehicle Supply Equipment (EVSE)
+   Note over EV1,EVSE: EV1 connects and starts charging
+   EV1 ->> EVSE: Physical Connection (PLC)
+   EVSE ->> EV1: SECC Discovery Response
+   EV1 ->> EVSE: Session Setup Request
+   EVSE -->> EV1: Session Setup Response
+   EV1 ->> EVSE: Service Discovery Request
+   EVSE -->> EV1: Service Discovery Response
+   EV1 ->> EVSE: Authorization Request
+   EVSE -->> EV1: Authorization Response
+   EV1 ->> EVSE: Power Delivery Request (Start Charging)
+   EVSE -->> EV1: Power Delivery Response
+   EVSE ->> EV1: Power Flow (100%)
+   Note over EV1 and EV2: EV2 connects while EV1 is charging
+   EV2 ->> EVSE: Physical Connection (PLC)
+   EVSE ->> EV2: SECC Discovery Response
+   EV2 ->> EVSE: Session Setup Request
+   EVSE -->> EV2: Session Setup Response
+   EV2 ->> EVSE: Service Discovery Request
+   EVSE -->> EV2: Service Discovery Response
+   EV2 ->> EVSE: Authorization Request
+   EVSE -->> EV2: Authorization Response
+   Note over EV1 and EV2: Power shift occurs
+   EVSE ->> EV1: Power Reduction Request (50%)
+   EV1 -->> EVSE: Power Reduction Acknowledgment
+   EVSE ->> EV2: Power Delivery Request (50%)
+   EV2 -->> EVSE: Power Delivery Response
+   EVSE ->> EV1: Power Flow (50%)
+   EVSE ->> EV2: Power Flow (50%)
+   Note over EV2: EV2 finishes charging
+   EV2 ->> EVSE: Power Delivery Request (Stop Charging)
+   EVSE -->> EV2: Power Delivery Response (End Charging)
+   EV2 ->> EVSE: Session Stop Request
+   EVSE -->> EV2: Session Stop Response
+   EVSE ->> EV1: Power Delivery Request (100%)
+   EV1 -->> EVSE: Power Delivery Response
+   EVSE ->> EV1: Power Flow (100%)
+   Note over EV1: EV1 finishes charging
+   EV1 ->> EVSE: Power Delivery Request (Stop Charging)
+   EVSE -->> EV1: Power Delivery Response (End Charging)
+   EV1 ->> EVSE: Session Stop Request
+   EVSE -->> EV1: Session Stop Response
+
+```
+
+### OCPP Demos
+
+```mermaid
+
+sequenceDiagram
+
+   participant EV as Electric Vehicle (EV)
+   participant EVSE as Electric Vehicle Supply Equipment (EVSE)
+   participant CS as Central System (CS)
+   Note over EV,EVSE: EV connects to EVSE
+   EV ->> EVSE: Physical Connection
+   Note over EVSE,CS: Authorization phase
+   EVSE ->> CS: Authorize.req (RFID/ID)
+   CS -->> EVSE: Authorize.conf (Accepted)
+   Note over EVSE: EVSE starts charging session
+   EVSE ->> CS: StartTransaction.req (Session ID, EV info)
+   CS -->> EVSE: StartTransaction.conf (Accepted)
+   Note over EVSE,EV: Charging starts
+   EVSE ->> EV: Power Flow (Charging)
+   Note over EVSE,CS: Periodic meter values reporting
+   EVSE ->> CS: MeterValues.req (Energy consumption)
+   CS -->> EVSE: MeterValues.conf (Acknowledgment)
+   Note over EV,EVSE: EV requests to stop charging
+   EV ->> EVSE: Stop Charging Request (Unplug)
+   Note over EVSE,CS: Charging session ends
+   EVSE ->> CS: StopTransaction.req (Final meter values, session end)
+   CS -->> EVSE: StopTransaction.conf (Acknowledged)
+   Note over EVSE: EVSE stops charging
+   EVSE ->> EV: Power Flow Stops
+
+```
+
