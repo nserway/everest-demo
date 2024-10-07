@@ -49,7 +49,7 @@ Below is a table of demonstrations that are currently avaialble. Copy and paste 
 Copy and paste the command for the demo you want to explore:
 
    - **One EV ↔ EVSE (AC Simulation):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-ac.sh | bash`
-   - **One EV ↔ EVSE (ISO 15118 DC):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
+   - **One EV ↔ EVSE (ISO 15118 AC):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
    - **Two EV ↔ EVSE:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-two-evse.sh | bash`
    - **E2E Automated Tests:** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-automated-testing.sh | bash`
    - OCPP Demos:
@@ -144,7 +144,7 @@ sequenceDiagram
  
 ``` 
 
-### One EV ↔ EVSE (ISO 15118-2 DC)
+### One EV ↔ EVSE (ISO 15118-2 AC)
 
 ```mermaid
 
