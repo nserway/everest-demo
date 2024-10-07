@@ -39,10 +39,10 @@ Below is a table of demonstrations that are currently avaialble. Copy and paste 
 | Demo | Content | Diagram |
 | ---- | -- | :---: |
 | **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | [One EV ↔ EVSE (AC Simulation) Diagram](#One-EV-EVSE-(AC-Simulation)) |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](One-EV-↔-EVSE (ISO 15118-2 DC))|
-| **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](#One-EV-↔-EVSE (ISO 15118-2 DC))|
+| **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | [Two EV ↔ EVSE Diagram](#Two-EV-↔-EVSE) |
 | **E2E Automated Tests** | Performs an automated test of a full charging session| N/A |
-| **OCPP Demos** | Various OCPP 1.6J and 2.0.1 compliant charging sessions with differing security profiles| |
+| **OCPP Demos** | Various OCPP 1.6J and 2.0.1 compliant charging sessions with differing security profiles| [OCPP Demo Diagram](#OCPP-Demos)|
 
 ### Demo Commands 
 
