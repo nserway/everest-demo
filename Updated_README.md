@@ -1,16 +1,27 @@
 # Vision 
 
-This repository includes several demos of the [EVerest](https://lfenergy.org/projects/everest/) tech stack capabilities which aim to exemplify the modular nature of EVerest. The intent of this repository is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the EV charging industry. The demonstrations can be utilized to understand the following: 
+This repository includes several demos of the [EVerest](https://lfenergy.org/projects/everest/) tech stack's capabilities. The intent of this repository is to showcase the foundational layers of a charging solution that could address interoperability and reliability issues in the EV charging industry. The demonstrations aim to exemplify the modular nature of EVerest and can be utilized to understand the following: 
 
 - Standards-based implementations for driving interoperability between the EV, EVSE, and CSMS
 - Interoperability testing tools and test suites
 - Simulated EVs, EVSEs, etc. following interoperability best practices and simulating stress testing scenarios 
 
+# Hosted Demos
+
+Below is a table of demonstrations that are currently avaialble.
+
+| Demo | Content | Diagram |
+| ---- | -- | :---: |
+| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | [One EV ↔ EVSE (AC Simulation) Diagram](#One-EV-EVSE-(AC-Simulation)) |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](#One-EV-↔-EVSE (ISO 15118-2 DC))|
+| **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | [Two EV ↔ EVSE Diagram](#Two-EV-↔-EVSE) |
+| **E2E Automated Tests** | Performs an automated test of a full charging session| N/A |
+| **OCPP Demos** | Various OCPP 1.6J and 2.0.1 compliant charging sessions with differing security profiles| [OCPP Demo Diagram](#OCPP-Demos)|
 
 # Operating System Specific Instructions 
 
 - Mac OS
-   - EVerest Demos are curently not supported on M1 chips
+   - EVerest Demos are curently NOT supported on M1 chips
 - Linux
    - No additional steps needed, move to [Install and Set-up](Install-and-Set-up)
 - Windows
@@ -32,21 +43,11 @@ This repository includes several demos of the [EVerest](https://lfenergy.org/pro
 
 # Step 1: Select the Demo
 
-Below is a table of demonstrations that are currently avaialble. Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
+Copy and paste the command for the demo you wish to run into the Docker terminal within the Docker desktop.
 
    - Note: Each demonstration has a brief description in the "Content" column and high-level diagram in the "Diagram" column. 
 
-| Demo | Content | Diagram |
-| ---- | -- | :---: |
-| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | [One EV ↔ EVSE (AC Simulation) Diagram](#One-EV-EVSE-(AC-Simulation)) |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](#One-EV-↔-EVSE (ISO 15118-2 DC))|
-| **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | [Two EV ↔ EVSE Diagram](#Two-EV-↔-EVSE) |
-| **E2E Automated Tests** | Performs an automated test of a full charging session| N/A |
-| **OCPP Demos** | Various OCPP 1.6J and 2.0.1 compliant charging sessions with differing security profiles| [OCPP Demo Diagram](#OCPP-Demos)|
-
 ### Demo Commands 
-
-Copy and paste the command for the demo you want to explore:
 
    - **One EV ↔ EVSE (AC Simulation):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-ac.sh | bash`
    - **One EV ↔ EVSE (ISO 15118 AC):** `curl https://raw.githubusercontent.com/everest/everest-demo/main/demo-iso15118-2-dc.sh | bash`
