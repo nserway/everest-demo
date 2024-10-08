@@ -149,7 +149,7 @@ sequenceDiagram
  
 ``` 
 
-### One EV to EVSE (ISO 15118-2 DC)
+### One EV to EVSE (ISO 15118 2 DC)
 
 ```mermaid
 
