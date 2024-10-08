@@ -77,11 +77,11 @@ Feel free to explore these demos on your own accord. Below is a table that will 
 
 Note: Only one demonstration can be run at a time, in order to spin up a new demo, move to Step 4: Teardown before attempting to start new demo.
 
-
+ 
 
 |Features| Description |
 | -- | ---- |
-|![Demo UI](img/One_EV_EVSE_UI.png)| |
+|<img src="img/One_EV_EVSE_UI.png" alt="Demo UI" width="249" height="572">| |
 | `CAR PLUGIN` | Starts the charging cycle |
 | `STOP & UNPLUG` | Stops the charging cycle |
 | `EV PAUSE` | Pause the charging session |
