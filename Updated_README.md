@@ -68,11 +68,12 @@ Copy and paste the command for the demo you wish to run into the Docker terminal
      
 2. Open the `nodered` flows to understand the module flows at http://127.0.0.1:1880
 
-   - Note: The nodered flows will allow the user to understand how modules interact within the demonstrations
+   - Note: The nodered flows will allow the user to understand how modules interact within the demonstrations. For  more information on simulating Everest with software, the simulation GUI, and NODE RED, click [here](https://everest.github.io/nightly/general/03_quick_start_guide.html#simulating-everest)
+ 
  
 # Step 3: Interact with the Demo
 
-Feel free to explore these demos on your own accord, below is a link to detailed instructions to interact with the different demonstrations, these instructions are meant to be a loose guide. Below is a table that will help the user understand how to interact with the UI.
+Feel free to explore these demos on your own accord. Below is a table that will help the user understand how to interact with the UI.
 
 Note: Only one demonstration can be run at a time, in order to spin up a new demo, move to Step 4: Teardown before attempting to start new demo.
 
@@ -91,18 +92,21 @@ Note: Only one demonstration can be run at a time, in order to spin up a new dem
    
 # Step 4: Teardown
 
-- Kill the demo process
-- Delete files and containers: `docker compose -p [prefix] down && rm docker-compose.yml` where `[prefix]` is `everest, everest-dc, everest-two-evse...`
+- Select all Docker containers
+- Delete all files and containers: `docker compose -p [prefix] down && rm docker-compose.yml` where `[prefix]` is `everest, everest-dc, everest-two-evse...`
 
 # Additional Functionality  
 
 There are many different variables that the user can experiment with thorughout the demonstrations. See below:
 
+### One EV ↔ EVSE (ISO 15118 AC) Demo
+
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 1.6J CSMS demo, you can open the SteVe wep portal at http://localhost:8180/steve/manager/home. Login with username: admin, password: 1234
-  
 - When running the Basic and ISO 15118-2 AC Charging with OCPP 201 CSMS demo, the script currently checks out the maeve repository and builds it, so it is fairly slow.
   - It starts the Maeve containers in detached mode, so you would need to use docker desktop or `docker logs` to see the logs
   - Note that the OCPP logs are available at `/tmp/everest_ocpp_logs/` on the EVerest manager and can be downloaded using the docker desktop or `docker cp`
+
+### All Demos
 
 - You can experiment with different constraints for a demo by exporting `EVEREST_MANAGER_CPUS` and `EVEREST_MANAGER_MEMORY` environment variables prior to running one of the demos. The values of these variables can take on any valid Docker [CPU value](https://docs.docker.com/config/containers/resource_constraints/#configure-the-default-cfs-scheduler) and [memory limit](https://docs.docker.com/config/containers/resource_constraints/#limit-a-containers-access-to-memory), respectively. For example, to run a demo with two CPUs and 1536 MB of RAM, you could execute
 
