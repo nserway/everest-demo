@@ -12,9 +12,9 @@ Below is a table of demonstrations that are currently avaialble.
 
 | Demo | Content | Diagram |
 | ---- | -- | :---: |
-| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | [One EV ↔ EVSE (AC Simulation) Diagram](#One-EV-EVSE-(AC-Simulation)) |
-| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](#One-EV-↔-EVSE (ISO 15118-2 DC))|
-| **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | [Two EV ↔ EVSE Diagram](#Two-EV-↔-EVSE) |
+| **One EV ↔ EVSE (AC Simulation)** | Simple AC charging session with one EV connecting to one Charger (EVSE) | [One EV ↔ EVSE (AC Simulation) Diagram](#One-EV-to-EVSE-(AC-Simulation)) |
+| **One EV ↔ EVSE (ISO 15118-2 DC)** | ISO 15118-2 compliant charging session with one EV connecting to one EVSE | [One EV ↔ EVSE (ISO 15118-2 DC) Diagram](#One-EV-to-EVSE-(ISO-15118-2-DC))|
+| **Two EV ↔ EVSE** | Two EVSE connector points showcasing EVerests ability to work with a CSMS in a multi-station context | [Two EV ↔ EVSE Diagram](#Two-EV-to-EVSE) |
 | **E2E Automated Tests** | Performs an automated test of a full charging session| N/A |
 | **OCPP Demos** | Various OCPP 1.6J and 2.0.1 compliant charging sessions with differing security profiles| [OCPP Demo Diagram](#OCPP-Demos)|
 
@@ -124,7 +124,7 @@ export EVEREST_MANAGER_CPUS='2.0' EVEREST_MANAGER_MEMORY='1536mb'
 
 The following diagrams provide a visual representation of the above demos.
 
-### One EV ↔ EVSE (AC Simulation)
+### One EV to EVSE (AC Simulation)
 
  ```mermaid
 
@@ -149,7 +149,7 @@ sequenceDiagram
  
 ``` 
 
-### One EV ↔ EVSE (ISO 15118-2 AC)
+### One EV to EVSE (ISO 15118-2 DC)
 
 ```mermaid
 
@@ -191,7 +191,7 @@ sequenceDiagram
 
 ```
 
-### Two EV ↔ EVSE
+### Two EV to EVSE
 
 ```mermaid
 
